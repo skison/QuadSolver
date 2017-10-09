@@ -1,0 +1,67 @@
+This is a description for how functions should be written as a part of the QuadSolver program. 
+Each function should be defined in its own .c file.
+
+HEADER: Each one of these .c files should contain a header that follows this format:
+
+/*
+function.c
+<data type> function(param 1, param 2, ... , param n)
+Inputs:
+  param 1: description
+  param 2: description
+  ...
+  param n: description
+  
+Outputs:
+  output 1: description
+  output 2: description
+  ...
+  output n: description
+  
+Short description of entire function(and #includes if necessary), plus explanation of possible side effects and errors
+Simple example input and output
+*/
+
+INCLUDE STATEMENTS: It is important that each function places its includes statements immediately after the header comment, 
+like as follows (NOTE- each .c file MUST include an associated .h declaration):
+
+/*
+Header info from above
+*/
+#include <stdio.h>
+#include <math.h>
+#inlcude "function.h" //Prototype declaration
+
+FORMATTING: For ease of readability & consistency, functions should be formatted as such:
+
+<data type function>(param 1, param 2, ... , param n)
+{
+  //Input vailadtion
+
+  /*General description of following variables*/
+  var x = ...; //unique description of variable (if necessary)
+  var y = ...; //unique description of variable (if necessary)
+  var z = ...; //unique description of variable (if necessary)
+  
+  /*Description of complex if statement*/
+  if (x == y)
+  {
+    x += 2; //unique description of statement (if necessary)
+    z = 0; //unique description of statement (if necessary)
+  }
+  
+  /*Description of simple if statement*/
+  if (x == 3) {z = 1;}
+  
+  return z; //unique description of statement (if necessary)
+}
+
+Generally speaking, anytime curly brackets are used, they should take up their own lines. The exception is when the statement is
+very short & simple, in which case everything should be on one line to conserve space.
+Multi-line comments (/**/) should be used whenever describing a collection of variables, if statements, switch statements, etc.
+Single-line comments (//) should be used whenever describing a single variables or a single statement.
+
+OTHER NOTES: Each function should perform input validation regardless of how confident you are that it will receive the right data.
+When returning a variable, ONLY DO IT ONCE at the end of the function. No returns or exits() mid-function.
+Always use CUnit to do unit testing throughout the developement of your function. Create initial unit tests BEFORE writing it!
+Don't create variables midway through the function, always initialize them at the beginning.
