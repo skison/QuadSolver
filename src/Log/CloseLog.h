@@ -1,0 +1,1 @@
+int CloseLog(FILE* fp);
