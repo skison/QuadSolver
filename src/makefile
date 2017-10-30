@@ -1,3 +1,4 @@
+
 CC=gcc
 IDIR = qsolve/
 CC=gcc
@@ -12,21 +13,21 @@ LIBS=-lm
 _DEPS = *.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
+.PHONY: clean
+clean:
+#ifeq ( "$(wildcard qsolver)", "" )
+	rm qsolver
+#endif
 
+ 
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-
-
-qsolver: $(OBJ)
+qsolver: 
 	gcc main.c qsolve/*.c IO/Input.c Log/CloseLog.c Log/OpenLog.c -o $@ $^ $(CFLAGS) -IIO/ -ILog/ -I/lib/include -lcunit -L/lib/CUnit/lib $(LIBS)
 
 #qsolver:  
 #	gcc main.c qsolve/*.c -o qsolver -Iqsolve/ -IIO/ -ILog/ -I/lib/include -lcunit -L/lib/CUnit/lib -lm
 
 
-.PHONY: clean
-
-clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
