@@ -20,7 +20,7 @@ $(ODIR)/%.o: %.c $(DEPS)
 
 
 qsolver: $(OBJ)
-	gcc main.c qsolve/*.c -o $@ $^ $(CFLAGS) -IIO/ -ILog/ -I/lib/include -lcunit -L/lib/CUnit/lib $(LIBS)
+	gcc main.c qsolve/*.c IO/Input.c -o $@ $^ $(CFLAGS) -IIO/ -ILog/ -I/lib/include -lcunit -L/lib/CUnit/lib $(LIBS)
 
 #qsolver:  
 #	gcc main.c qsolve/*.c -o qsolver -Iqsolve/ -IIO/ -ILog/ -I/lib/include -lcunit -L/lib/CUnit/lib -lm
