@@ -17,11 +17,15 @@
 #include <stdlib.h>
 #include "./qsolve/qsolve.h"
 #include "./IO/Input.h"
-
+#include "./Log/OpenLog.h"
+#include "./Log/CloseLog.h"
+#include "./Log/WriteLog.h"
 #define MAX_SIZE 40  
 
 int main()
 {
+    FILE* logFile;
+    logFile = OpenLog("mainLog.txt", 1);
     printf("Quadratic Solver <qsolve.c> V1.3\nContributors: Alan Alvarez,\tSamuel Kison,\tOmar Santana\n");
     int menu = 2;
     while (menu!=0){
@@ -82,6 +86,6 @@ int main()
             fgets(input, 3*MAX_SIZE, stdin);
         }    
     }
-
+    CloseLog(logFile);
     return  0;
 }
