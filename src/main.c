@@ -8,6 +8,7 @@
 
 int main()
 {
+    printf("Quadratic Solver <qsolve.c> V1.3\nContributors: Alan Alvarez,\tSamuel Kison,\tOmar Santana\n");
     int menu = 2;
     while (menu!=0){
         menu = 2;
@@ -19,8 +20,6 @@ int main()
         int x=0;
         int y=0;
         int z=0,i;
-
-        printf("Quadratic Solver <qsolve.c> V1.3\nContributors: Alan Alvarez,\tSamuel Kison,\tOmar Santana\n");
 
         printf("\nPlease enter the values for a, b, and c for a given quadratic equation following this format:\na*x^2 + b*x + c\n");
 
