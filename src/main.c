@@ -12,11 +12,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */   
 
+
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "./qsolve/qsolve.h"
 #include "./IO/Input.h"
+#include "./Log/WriteLog.c"
+#include "./Log/OpenLog.c"
 #include "./Log/OpenLog.h"
 #include "./Log/CloseLog.h"
 #include "./Log/WriteLog.h"
